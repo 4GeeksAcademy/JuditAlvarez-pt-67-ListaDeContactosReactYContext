@@ -1,9 +1,11 @@
-/* Contenedor */
+/* Contenedor principal */
 .container {
     max-width: 1200px;
     margin: 0 auto; /* Centrar el contenedor */
     padding: 20px;
     background-color: #f8f9fa; /* Fondo claro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 /* Estilos de tarjeta */
@@ -22,8 +24,19 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilos de texto */
+h1, h2, h3, h4, h5, h6, p {
+    color: #343a40; /* Gris oscuro */
+    font-family: 'Arial', sans-serif; /* Fuente */
+    margin: 10px 0; /* Espaciado vertical */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
 /* Estilos de botón */
-.btn-primary, .btn-danger, .btn-success, .btn-warning {
+.btn-primary, .btn-danger, .btn-success, .btn-warning, .btn-secondary {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,13 +70,18 @@
     color: #fff;
 }
 
+.btn-secondary {
+    background-color: #e83e8c; /* Rosa */
+    color: #fff;
+}
+
 /* Hover de botón */
 .btn-primary:hover {
     background-color: #0056b3; /* Azul oscuro */
     color: #fff;
 }
 
-.btn-danger:hover {
+.btn-danger:hover, .btn-secondary:hover {
     background-color: #c82333; /* Rosa oscuro */
     color: #fff;
 }
@@ -76,12 +94,6 @@
 .btn-warning:hover {
     background-color: #e0a800; /* Amarillo oscuro */
     color: #fff;
-}
-
-/* Estilos de texto */
-h1, h2, h3, h4, h5, h6, p {
-    color: #343a40; /* Gris oscuro */
-    margin: 10px 0; /* Espaciado vertical */
 }
 
 /* Fondo general */
