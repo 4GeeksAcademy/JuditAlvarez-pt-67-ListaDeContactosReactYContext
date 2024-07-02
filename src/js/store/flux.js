@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
         actions: {
             fetchContacts: () => {
-                fetch('https://playground.4geeks.com/contact/agendas/judit_Alvarez/contacts')
+                fetch('https://playground.4geeks.com/contact/agendas/judit_alvarez/contacts')
                     .then(response => {
                         if (response.status === 404) {
                             throw new Error('Agenda not found');
@@ -37,14 +37,14 @@ const getState = ({ getStore, getActions, setStore }) => {
                         }
                     });
             },
-            // Load contacts from localStorage
+           
             loadContactsFromLocalStorage: () => {
                 const localContacts = localStorage.getItem('contacts');
                 if (localContacts) {
                     setStore({ contacts: JSON.parse(localContacts) });
                 }
             },
-            // Add a new contact with POST
+           
             addContact: (contact) => {
                 fetch('https://playground.4geeks.com/contact/agendas/judit_alvarez/contacts', {
                     method: 'POST',
@@ -62,7 +62,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     })
                     .catch(error => console.error('Error adding contact:', error));
             },
-            // Update an existing contact with PUT
+            
             updateContact: (contact) => {
                 fetch(`https://playground.4geeks.com/contact/agendas/judit_alvarez/contacts/${contact.id}`, {
                     method: 'PUT',
@@ -80,7 +80,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     })
                     .catch(error => console.error('Error updating contact:', error));
             },
-            // Delete a contact with DELETE
+            
             deleteContact: (id) => {
                 fetch(`https://playground.4geeks.com/contact/agendas/judit_alvarez/contacts/${id}`, {
                     method: 'DELETE'
@@ -93,11 +93,11 @@ const getState = ({ getStore, getActions, setStore }) => {
                     })
                     .catch(error => console.error('Error deleting contact:', error));
             },
-            // Set selected contact
+           
             setSelectedContact: (contact) => {
                 setStore({ selectedContact: contact });
             },
-            // Clear selected contact
+            
             clearSelectedContact: () => {
                 setStore({ selectedContact: null });
             }
